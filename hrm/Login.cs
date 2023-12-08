@@ -11,7 +11,7 @@ namespace hrm
 
         private void OnPageLoad(object sender, EventArgs e)
         {
-            
+
         }
 
         private void OnLogin(object sender, EventArgs e)
@@ -19,10 +19,11 @@ namespace hrm
             string email = textBox1.Text;
             string password = textBox2.Text;
 
-            if(email == "" || password == "")
+            if (email == "" || password == "")
             {
                 MessageBox.Show("Entrez votre e-mail et votre mot de passe s'il vous plaît.");
-            } else
+            }
+            else
             {
                 DB.con.Open();
 
@@ -31,15 +32,16 @@ namespace hrm
                 SqlCommand cmd = new SqlCommand(sql_request, DB.con);
 
                 cmd.Parameters.AddWithValue("email", email);
-                cmd.Parameters.AddWithValue ("password", password);
+                cmd.Parameters.AddWithValue("password", password);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                if(dr.Read())
+                if (dr.Read())
                 {
                     // Redirect to other page.
                     MessageBox.Show("Bienvenu !");
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Data invalid !");
                     // Show textBox
@@ -48,5 +50,9 @@ namespace hrm
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
