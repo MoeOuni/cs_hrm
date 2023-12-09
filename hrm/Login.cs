@@ -20,8 +20,8 @@ namespace hrm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string email = textBox1.Text;
-            string password = textBox2.Text;
+            string email = this.email.Text;
+            string password = this.password.Text;
 
             if (email == "" || password == "")
             {
@@ -44,16 +44,21 @@ namespace hrm
                 {
                     // Redirect to other page.
                     MessageBox.Show("Bienvenu !");
+                    Home home = new Home();
+                    home.Show();
 
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Data invalid !");
+                    MessageBox.Show("Vérifier votre email ou mot de passe !");
                     // Show textBox
                 }
                 DB.con.Close();
 
             }
         }
+
+       
     }
 }

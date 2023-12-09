@@ -29,47 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LeaveRequest));
-            comboBox1 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
-            richTextBox1 = new RichTextBox();
+            type = new ComboBox();
+            startDate = new DateTimePicker();
+            endDate = new DateTimePicker();
+            motif = new RichTextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            button1 = new Button();
+            submit = new Button();
             SuspendLayout();
             // 
-            // comboBox1
+            // type
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(31, 56);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(336, 23);
-            comboBox1.TabIndex = 0;
+            type.FormattingEnabled = true;
+            type.Items.AddRange(new object[] { "Congé Annuel", "Congé Sans Solde", "Congé Maladie", "Autorisation", "Télétravail", "Autre Absence" });
+            type.Location = new Point(35, 75);
+            type.Margin = new Padding(3, 4, 3, 4);
+            type.Name = "type";
+            type.Size = new Size(383, 28);
+            type.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // startDate
             // 
-            dateTimePicker1.Location = new Point(31, 113);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(336, 23);
-            dateTimePicker1.TabIndex = 1;
+            startDate.Location = new Point(35, 151);
+            startDate.Margin = new Padding(3, 4, 3, 4);
+            startDate.Name = "startDate";
+            startDate.Size = new Size(383, 27);
+            startDate.TabIndex = 1;
             // 
-            // dateTimePicker2
+            // endDate
             // 
-            dateTimePicker2.Location = new Point(31, 175);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(336, 23);
-            dateTimePicker2.TabIndex = 2;
-            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
+            endDate.Location = new Point(35, 233);
+            endDate.Margin = new Padding(3, 4, 3, 4);
+            endDate.Name = "endDate";
+            endDate.Size = new Size(383, 27);
+            endDate.TabIndex = 2;
+            endDate.ValueChanged += dateTimePicker2_ValueChanged;
             // 
-            // richTextBox1
+            // motif
             // 
-            richTextBox1.Location = new Point(31, 239);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(336, 96);
-            richTextBox1.TabIndex = 3;
-            richTextBox1.Text = "";
+            motif.Location = new Point(35, 319);
+            motif.Margin = new Padding(3, 4, 3, 4);
+            motif.Name = "motif";
+            motif.Size = new Size(383, 127);
+            motif.TabIndex = 3;
+            motif.Text = "";
             // 
             // label1
             // 
@@ -77,9 +82,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(31, 34);
+            label1.Location = new Point(35, 45);
             label1.Name = "label1";
-            label1.Size = new Size(157, 19);
+            label1.Size = new Size(187, 23);
             label1.TabIndex = 4;
             label1.Text = "Type de la demande : ";
             label1.Click += label1_Click;
@@ -90,9 +95,9 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(31, 91);
+            label2.Location = new Point(35, 121);
             label2.Name = "label2";
-            label2.Size = new Size(112, 19);
+            label2.Size = new Size(136, 23);
             label2.TabIndex = 5;
             label2.Text = "Date de début :";
             label2.Click += label2_Click;
@@ -103,9 +108,9 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(31, 153);
+            label3.Location = new Point(35, 204);
             label3.Name = "label3";
-            label3.Size = new Size(90, 19);
+            label3.Size = new Size(110, 23);
             label3.TabIndex = 6;
             label3.Text = "Date de fin :";
             // 
@@ -115,39 +120,42 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label4.ForeColor = SystemColors.ControlLightLight;
-            label4.Location = new Point(31, 217);
+            label4.Location = new Point(35, 289);
             label4.Name = "label4";
-            label4.Size = new Size(45, 19);
+            label4.Size = new Size(55, 23);
             label4.TabIndex = 7;
             label4.Text = "Motif";
             // 
-            // button1
+            // submit
             // 
-            button1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            button1.Location = new Point(31, 352);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 29);
-            button1.TabIndex = 8;
-            button1.Text = "Soumettre";
-            button1.UseVisualStyleBackColor = true;
+            submit.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            submit.Location = new Point(35, 469);
+            submit.Margin = new Padding(3, 4, 3, 4);
+            submit.Name = "submit";
+            submit.Size = new Size(114, 39);
+            submit.TabIndex = 8;
+            submit.Text = "Soumettre";
+            submit.UseVisualStyleBackColor = true;
+            submit.Click += submit_Click;
             // 
             // LeaveRequest
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(410, 405);
-            Controls.Add(button1);
+            ClientSize = new Size(469, 540);
+            Controls.Add(submit);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(richTextBox1);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(comboBox1);
+            Controls.Add(motif);
+            Controls.Add(endDate);
+            Controls.Add(startDate);
+            Controls.Add(type);
             DoubleBuffered = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LeaveRequest";
             Text = "LeaveRequest";
             ResumeLayout(false);
@@ -156,14 +164,14 @@
 
         #endregion
 
-        private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
-        private RichTextBox richTextBox1;
+        private ComboBox type;
+        private DateTimePicker startDate;
+        private DateTimePicker endDate;
+        private RichTextBox motif;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
-        private Button button1;
+        private Button submit;
     }
 }
