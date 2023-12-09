@@ -1,4 +1,13 @@
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace hrm
 {
@@ -9,20 +18,16 @@ namespace hrm
             InitializeComponent();
         }
 
-        private void OnPageLoad(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            
-        }
+            string email = this.email.Text;
+            string password = this.password.Text;
 
-        private void OnLogin(object sender, EventArgs e)
-        {
-            string email = textBox1.Text;
-            string password = textBox2.Text;
-
-            if(email == "" || password == "")
+            if (email == "" || password == "")
             {
                 MessageBox.Show("Entrez votre e-mail et votre mot de passe s'il vous plaît.");
-            } else
+            }
+            else
             {
                 DB.con.Open();
 
@@ -31,22 +36,29 @@ namespace hrm
                 SqlCommand cmd = new SqlCommand(sql_request, DB.con);
 
                 cmd.Parameters.AddWithValue("email", email);
-                cmd.Parameters.AddWithValue ("password", password);
+                cmd.Parameters.AddWithValue("password", password);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                if(dr.Read())
+                if (dr.Read())
                 {
                     // Redirect to other page.
                     MessageBox.Show("Bienvenu !");
-                } else
+                    Home home = new Home();
+                    home.Show();
+
+                    this.Hide();
+                }
+                else
                 {
-                    MessageBox.Show("Data invalid !");
+                    MessageBox.Show("Vérifier votre email ou mot de passe !");
                     // Show textBox
                 }
                 DB.con.Close();
+
             }
         }
 
+       
     }
 }
