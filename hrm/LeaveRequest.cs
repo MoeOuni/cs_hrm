@@ -65,9 +65,12 @@ namespace hrm
 
                 SqlCommand cmd = new SqlCommand(sql_query, DB.con);
 
+                DateTime convertedStartDate = DateTime.Parse(startDate);
+                DateTime convertedEndDate = DateTime.Parse(endDate);
+
                 cmd.Parameters.AddWithValue("type", type);
-                cmd.Parameters.AddWithValue("startDate", startDate);
-                cmd.Parameters.AddWithValue("endDate", endDate);
+                cmd.Parameters.AddWithValue("startDate", convertedStartDate);
+                cmd.Parameters.AddWithValue("endDate", convertedEndDate);
                 cmd.Parameters.AddWithValue("motif", motif);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
