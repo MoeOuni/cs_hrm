@@ -9,11 +9,11 @@ namespace hrm
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            // Application.Run(new Login());
+            Application.Run(new Login());
             // Application.Run(new Home());
             // Application.Run(new LeaveRequest());
             // Application.Run(new LeaveList());
-            Application.Run(new AddUser());
+            // Application.Run(new AddUser());
         }
     }
 }
