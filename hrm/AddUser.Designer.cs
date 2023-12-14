@@ -28,62 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUser));
+            textBoxName = new TextBox();
+            textBoxFirstName = new TextBox();
+            textBoxEmail = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            label4 = new Label();
-            textBox5 = new TextBox();
+            textBoxPassword = new TextBox();
             label5 = new Label();
             button1 = new Button();
+            label4 = new Label();
+            textBoxMatricule = new TextBox();
+            textBoxPoste = new TextBox();
+            textBoxLeaveBalance = new TextBox();
+            label6 = new Label();
+            label7 = new Label();
+            dataGridViewUsers = new DataGridView();
+            label8 = new Label();
+            comboBoxRole = new ComboBox();
+            textBoxCin = new TextBox();
+            textBoxPhoneNumber = new TextBox();
+            textBoxAdresse = new TextBox();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            button2 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // textBoxName
             // 
-            textBox1.Location = new Point(139, 60);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(163, 23);
-            textBox1.TabIndex = 0;
+            textBoxName.Location = new Point(83, 104);
+            textBoxName.Margin = new Padding(3, 4, 3, 4);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(186, 27);
+            textBoxName.TabIndex = 0;
             // 
-            // textBox2
+            // textBoxFirstName
             // 
-            textBox2.Location = new Point(139, 97);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(163, 23);
-            textBox2.TabIndex = 1;
+            textBoxFirstName.Location = new Point(359, 102);
+            textBoxFirstName.Margin = new Padding(3, 4, 3, 4);
+            textBoxFirstName.Name = "textBoxFirstName";
+            textBoxFirstName.Size = new Size(186, 27);
+            textBoxFirstName.TabIndex = 1;
             // 
-            // textBox3
+            // textBoxEmail
             // 
-            textBox3.Location = new Point(139, 144);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(163, 23);
-            textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(139, 185);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(163, 23);
-            textBox4.TabIndex = 3;
+            textBoxEmail.Location = new Point(83, 212);
+            textBoxEmail.Margin = new Padding(3, 4, 3, 4);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(186, 27);
+            textBoxEmail.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(34, 63);
+            label1.BackColor = Color.Transparent;
+            label1.Location = new Point(83, 80);
             label1.Name = "label1";
-            label1.Size = new Size(40, 15);
+            label1.Size = new Size(45, 18);
             label1.TabIndex = 4;
             label1.Text = "Nom :";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(34, 105);
+            label2.BackColor = Color.Transparent;
+            label2.Location = new Point(359, 80);
             label2.Name = "label2";
-            label2.Size = new Size(55, 15);
+            label2.Size = new Size(65, 18);
             label2.TabIndex = 5;
             label2.Text = "Prénom :";
             label2.Click += label2_Click;
@@ -91,81 +105,259 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(34, 147);
+            label3.BackColor = Color.Transparent;
+            label3.Location = new Point(359, 190);
             label3.Name = "label3";
-            label3.Size = new Size(83, 15);
+            label3.Size = new Size(100, 18);
             label3.TabIndex = 6;
             label3.Text = "Mot de passe :";
             label3.Click += label3_Click;
             // 
-            // label4
+            // textBoxPassword
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(34, 185);
-            label4.Name = "label4";
-            label4.Size = new Size(44, 15);
-            label4.TabIndex = 7;
-            label4.Text = "Statut :";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(139, 229);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(163, 23);
-            textBox5.TabIndex = 8;
+            textBoxPassword.Location = new Point(359, 212);
+            textBoxPassword.Margin = new Padding(3, 4, 3, 4);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(186, 27);
+            textBoxPassword.TabIndex = 8;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(34, 237);
+            label5.BackColor = Color.Transparent;
+            label5.Location = new Point(83, 135);
             label5.Name = "label5";
-            label5.Size = new Size(84, 15);
+            label5.Size = new Size(75, 18);
             label5.TabIndex = 9;
-            label5.Text = "leave balance !";
+            label5.Text = "Matricule :";
+            label5.Click += label5_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(442, 284);
+            button1.Location = new Point(83, 310);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(86, 28);
             button1.TabIndex = 10;
             button1.Text = "Ajouter";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Location = new Point(83, 190);
+            label4.Name = "label4";
+            label4.Size = new Size(49, 18);
+            label4.TabIndex = 11;
+            label4.Text = "Email :";
+            // 
+            // textBoxMatricule
+            // 
+            textBoxMatricule.Location = new Point(83, 157);
+            textBoxMatricule.Margin = new Padding(3, 4, 3, 4);
+            textBoxMatricule.Name = "textBoxMatricule";
+            textBoxMatricule.Size = new Size(186, 27);
+            textBoxMatricule.TabIndex = 12;
+            textBoxMatricule.TextChanged += textBox4_TextChanged;
+            // 
+            // textBoxPoste
+            // 
+            textBoxPoste.Location = new Point(359, 157);
+            textBoxPoste.Margin = new Padding(3, 4, 3, 4);
+            textBoxPoste.Name = "textBoxPoste";
+            textBoxPoste.Size = new Size(186, 27);
+            textBoxPoste.TabIndex = 13;
+            // 
+            // textBoxLeaveBalance
+            // 
+            textBoxLeaveBalance.Location = new Point(634, 157);
+            textBoxLeaveBalance.Margin = new Padding(3, 4, 3, 4);
+            textBoxLeaveBalance.Name = "textBoxLeaveBalance";
+            textBoxLeaveBalance.Size = new Size(186, 27);
+            textBoxLeaveBalance.TabIndex = 14;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Location = new Point(359, 135);
+            label6.Name = "label6";
+            label6.Size = new Size(52, 18);
+            label6.TabIndex = 15;
+            label6.Text = "Poste :";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Location = new Point(634, 135);
+            label7.Name = "label7";
+            label7.Size = new Size(153, 18);
+            label7.TabIndex = 16;
+            label7.Text = "Solde De Congé Initial :";
+            // 
+            // dataGridViewUsers
+            // 
+            dataGridViewUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewUsers.Location = new Point(41, 353);
+            dataGridViewUsers.Name = "dataGridViewUsers";
+            dataGridViewUsers.RowHeadersWidth = 51;
+            dataGridViewUsers.Size = new Size(833, 234);
+            dataGridViewUsers.TabIndex = 17;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Location = new Point(634, 80);
+            label8.Name = "label8";
+            label8.Size = new Size(43, 18);
+            label8.TabIndex = 19;
+            label8.Text = "Rôle :";
+            // 
+            // comboBoxRole
+            // 
+            comboBoxRole.FormattingEnabled = true;
+            comboBoxRole.Items.AddRange(new object[] { "Collaborateur", "Chef de Projet", "Administrateur" });
+            comboBoxRole.Location = new Point(634, 101);
+            comboBoxRole.Name = "comboBoxRole";
+            comboBoxRole.Size = new Size(186, 26);
+            comboBoxRole.TabIndex = 20;
+            // 
+            // textBoxCin
+            // 
+            textBoxCin.Location = new Point(83, 267);
+            textBoxCin.Margin = new Padding(3, 4, 3, 4);
+            textBoxCin.Name = "textBoxCin";
+            textBoxCin.Size = new Size(186, 27);
+            textBoxCin.TabIndex = 21;
+            // 
+            // textBoxPhoneNumber
+            // 
+            textBoxPhoneNumber.Location = new Point(634, 212);
+            textBoxPhoneNumber.Margin = new Padding(3, 4, 3, 4);
+            textBoxPhoneNumber.Name = "textBoxPhoneNumber";
+            textBoxPhoneNumber.Size = new Size(186, 27);
+            textBoxPhoneNumber.TabIndex = 22;
+            // 
+            // textBoxAdresse
+            // 
+            textBoxAdresse.Location = new Point(359, 267);
+            textBoxAdresse.Margin = new Padding(3, 4, 3, 4);
+            textBoxAdresse.Name = "textBoxAdresse";
+            textBoxAdresse.Size = new Size(186, 27);
+            textBoxAdresse.TabIndex = 23;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Location = new Point(634, 190);
+            label9.Name = "label9";
+            label9.Size = new Size(99, 18);
+            label9.TabIndex = 24;
+            label9.Text = "N° Télèphone :";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Location = new Point(83, 245);
+            label10.Name = "label10";
+            label10.Size = new Size(38, 18);
+            label10.TabIndex = 25;
+            label10.Text = "CIN :";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Location = new Point(359, 245);
+            label11.Name = "label11";
+            label11.Size = new Size(67, 18);
+            label11.TabIndex = 26;
+            label11.Text = "Adresse :";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(83, 25);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 27;
+            button2.Text = "Retour";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // AddUser
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(945, 599);
+            Controls.Add(button2);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(textBoxAdresse);
+            Controls.Add(textBoxPhoneNumber);
+            Controls.Add(textBoxCin);
+            Controls.Add(comboBoxRole);
+            Controls.Add(label8);
+            Controls.Add(dataGridViewUsers);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(textBoxLeaveBalance);
+            Controls.Add(textBoxPoste);
+            Controls.Add(textBoxMatricule);
+            Controls.Add(label4);
             Controls.Add(button1);
             Controls.Add(label5);
-            Controls.Add(textBox5);
-            Controls.Add(label4);
+            Controls.Add(textBoxPassword);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxEmail);
+            Controls.Add(textBoxFirstName);
+            Controls.Add(textBoxName);
+            DoubleBuffered = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AddUser";
             Text = "AddUser";
+            Load += AddUser_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox textBoxName;
+        private TextBox textBoxFirstName;
+        private TextBox textBoxEmail;
         private Label label1;
         private Label label2;
         private Label label3;
-        private Label label4;
-        private TextBox textBox5;
+        private TextBox textBoxPassword;
         private Label label5;
         private Button button1;
+        private Label label4;
+        private TextBox textBoxMatricule;
+        private TextBox textBoxPoste;
+        private TextBox textBoxLeaveBalance;
+        private Label label6;
+        private Label label7;
+        private DataGridView dataGridViewUsers;
+        private Label label8;
+        private ComboBox comboBoxRole;
+        private TextBox textBoxCin;
+        private TextBox textBoxPhoneNumber;
+        private TextBox textBoxAdresse;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Button button2;
     }
 }

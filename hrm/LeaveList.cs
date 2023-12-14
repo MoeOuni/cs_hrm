@@ -52,5 +52,13 @@ namespace hrm
             dataGridView.DataSource = requests;
             DB.con.Close();
         }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            Home page = new Home();
+
+            page.Show();
+            this.Hide();
+        }
     }
 }

@@ -44,7 +44,26 @@ namespace hrm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            LeaveRequest page = new LeaveRequest();
 
+            page.Show();
+            this.Hide();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            LeaveList page = new LeaveList();
+
+            page.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AddUser page = new AddUser();
+
+            page.Show();
+            this.Hide();
         }
     }
 }
