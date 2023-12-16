@@ -1,6 +1,6 @@
 ﻿namespace hrm
 {
-    partial class ListUser
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(776, 320);
-            dataGridView1.TabIndex = 0;
-            // 
-            // ListUser
+            // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
-            Name = "ListUser";
-            Text = "ListUser";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Name = "Form1";
+            Text = "Archive";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
     }
 }
