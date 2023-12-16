@@ -8,6 +8,7 @@ namespace hrm
 {
     internal class User
     {
+        public int Id { get; set; }
         public string regNumber { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }

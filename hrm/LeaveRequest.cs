@@ -61,7 +61,7 @@ namespace hrm
             {
                 DB.con.Open();
 
-                string sql_query = "INSERT INTO leaves (type, startDate, endDate, motif) VALUES(@type, @startDate, @endDate, @motif)";
+                string sql_query = "INSERT INTO leaves (type, startDate, endDate, motif, requestedBy) VALUES(@type, @startDate, @endDate, @motif, @requestedBy)";
 
                 SqlCommand cmd = new SqlCommand(sql_query, DB.con);
 
@@ -72,6 +72,7 @@ namespace hrm
                 cmd.Parameters.AddWithValue("startDate", convertedStartDate);
                 cmd.Parameters.AddWithValue("endDate", convertedEndDate);
                 cmd.Parameters.AddWithValue("motif", motif);
+                cmd.Parameters.AddWithValue("requestedBy", Login.userId);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -97,7 +98,6 @@ namespace hrm
 
             page.Show();
             this.Hide();
-
         }
     }
 }

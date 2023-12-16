@@ -52,7 +52,14 @@ namespace hrm
             string phoneNumber = textBoxPhoneNumber.Text;
             int cin = int.Parse(textBoxCin.Text);
             string address = textBoxAdresse.Text;
+            int idResponsable = 0;
+            if (comboBoxUsers.SelectedIndex >= 0)
+            {
+                User selectedUser = (User)comboBoxUsers.SelectedItem;
+                idResponsable = selectedUser.Id;
+            }
 
+            MessageBox.Show(idResponsable.ToString());
             if (!string.IsNullOrEmpty(name) &&
                 !string.IsNullOrEmpty(firstName) &&
                 !string.IsNullOrEmpty(role) &&
@@ -67,7 +74,7 @@ namespace hrm
                 // All fields are filled, proceed with the logic
                 DB.con.Open();
 
-                string query = "INSERT INTO users (firstName, lastName, role, matricule, post, leaveBalance, email, password, phoneNumber, cin, adresse) VALUES ( '" + firstName + "', '" + name + "', '" + role + "', '" + matricule + "', '" + poste + "', '" + leaveBalance + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + cin + "', '" + address + "')";
+                string query = "INSERT INTO users (firstName, lastName, role, matricule, post, leaveBalance, email, password, phoneNumber, cin, adresse, idManager) VALUES ( '" + firstName + "', '" + name + "', '" + role + "', '" + matricule + "', '" + poste + "', '" + leaveBalance + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + cin + "', '" + address + "', '" + idResponsable +"')";
 
                 SqlCommand cmd = new SqlCommand(query, DB.con);
 
@@ -118,6 +125,7 @@ namespace hrm
             while (reader.Read())
             {
                 User user = new User();
+                user.Id = Convert.ToInt32(reader["Id"]);
                 user.firstName = reader["firstName"].ToString();
                 user.lastName = reader["lastName"].ToString();
                 user.role = reader["role"].ToString();
@@ -129,9 +137,13 @@ namespace hrm
                 user.cin = Convert.ToInt32(reader["cin"]);
                 user.address = reader["adresse"].ToString();
 
+
+
                 this.users.Add(user);
             }
-
+            comboBoxUsers.DisplayMember = "firstName";
+            comboBoxUsers.ValueMember = "Id";
+            comboBoxUsers.DataSource = this.users;
             dataGridViewUsers.DataSource = this.users;
             reader.Close();
             DB.con.Close();

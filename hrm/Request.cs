@@ -8,6 +8,8 @@ namespace hrm
 {
     internal class Request
     {
+        public string firstName { get; set; }
+        public string lastName { get; set; }
         public string type { get; set; }
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }

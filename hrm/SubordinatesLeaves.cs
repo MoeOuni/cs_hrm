@@ -11,40 +11,48 @@ using System.Windows.Forms;
 
 namespace hrm
 {
-    public partial class LeaveList : Form
+    public partial class SubordinatesLeaves : Form
     {
         private List<Request> requests;
-        public LeaveList()
+        public SubordinatesLeaves()
         {
             InitializeComponent();
         }
 
-        private void LeaveList_Load(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SubordinatesLeaves_Load(object sender, EventArgs e)
         {
             DB.con.Open();
 
-            string sql_query = "select type, startDate, endDate, motif, requestedAt, status from leaves WHERE requestedBy = @requestedBy";
+            MessageBox.Show(Login.userId.ToString());
 
+            String sqlQuery = "SELECT leaves.type, leaves.startDate, leaves.endDate, leaves.motif, leaves.requestedAt, leaves.status, users.firstName, users.lastName FROM leaves JOIN users ON leaves.requestedBy = users.id WHERE leaves.requestedBy IN (SELECT id FROM users WHERE idManager = @userId)";
 
-            SqlCommand cmd = new SqlCommand(sql_query, DB.con);
+            SqlCommand cmd = new SqlCommand(sqlQuery, DB.con);
 
-            cmd.Parameters.AddWithValue("requestedBy", Login.userId);
+            cmd.Parameters.AddWithValue("userId", Login.userId);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
-            requests = new List<Request>(); // Create a new instance of the requests list
+            requests = new List<Request>();
 
             while (reader.Read())
             {
                 // Read the data from the reader and create a new Request object
                 Request request = new Request
                 {
+                    firstName = reader.GetString(6),
+                    lastName = reader.GetString(7),
                     type = reader.GetString(0),
                     startDate = reader.GetDateTime(1),
                     endDate = reader.GetDateTime(2),
                     motif = reader.GetString(3),
                     requestedAt = reader.GetDateTime(4),
-                    status = reader.GetString(5)
+                    status = reader.GetString(5),
                 };
 
                 requests.Add(request); // Add the request to the list
@@ -54,14 +62,6 @@ namespace hrm
 
             dataGridView.DataSource = requests;
             DB.con.Close();
-        }
-
-        private void btn1_Click(object sender, EventArgs e)
-        {
-            Home page = new Home();
-
-            page.Show();
-            this.Hide();
         }
     }
 }

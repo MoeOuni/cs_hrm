@@ -65,5 +65,13 @@ namespace hrm
             page.Show();
             this.Hide();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SubordinatesLeaves page = new SubordinatesLeaves();
+
+            page.Show();
+            this.Hide();
+        }
     }
 }

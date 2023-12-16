@@ -13,6 +13,7 @@ namespace hrm
 {
     public partial class Login : Form
     {
+        public static int userId = -1;
         public Login()
         {
             InitializeComponent();
@@ -43,8 +44,11 @@ namespace hrm
                 if (dr.Read())
                 {
                     // Redirect to other page.
-                    MessageBox.Show("Bienvenu !");
+                    userId = dr.GetInt32(0);
+
                     Home home = new Home();
+
+
                     home.Show();
 
                     this.Hide();
