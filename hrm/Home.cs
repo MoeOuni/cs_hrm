@@ -76,7 +76,9 @@ namespace hrm
 
         private void button6_Click(object sender, EventArgs e)
         {
-            AllLeve
+            AllLeaves page = new AllLeaves();
+            page.Show();
+            this.Hide();
         }
     }
 }
