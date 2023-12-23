@@ -18,22 +18,7 @@ namespace hrm
             InitializeComponent();
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void submit_Click(object sender, EventArgs e)
+        private void SubmitLeaveRequest(object sender, EventArgs e)
         {
             string type = this.type.Text;
             string startDate = this.startDate.Text;
@@ -59,14 +44,41 @@ namespace hrm
             }
             else
             {
+                DateTime convertedStartDate = DateTime.Parse(startDate);
+                DateTime convertedEndDate = DateTime.Parse(endDate);
+
+                try
+                {
+                    DateFuncs.ValiderPlageDeDates(convertedStartDate, convertedEndDate);
+                }
+                catch (System.Exception ex)
+                {
+                    // En cas d'erreur on affiche un message d'erreur et on arrete l'execution de la fonction
+                    MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Si le congé et annuel on doit verifier le solde de congé.  
+                if (type == "Congé Annuel")
+                {
+                    try
+                    {
+                        // DateFuncs.CalculerJoursConges(convertedStartDate, convertedEndDate) retourne le nombre de jours ouvrables entre deux dates
+                        Utils.UpdateLeaveBalance(Login.userId, -DateFuncs.CalculerJoursConges(convertedStartDate, convertedEndDate));
+                    }
+                    catch (System.Exception ex)
+                    {
+                        // En cas d'erreur on affiche un message d'erreur et on arrete l'execution de la fonction
+                        MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
                 DB.con.Open();
 
                 string sql_query = "INSERT INTO leaves (type, startDate, endDate, motif, requestedBy) VALUES(@type, @startDate, @endDate, @motif, @requestedBy)";
 
                 SqlCommand cmd = new SqlCommand(sql_query, DB.con);
-
-                DateTime convertedStartDate = DateTime.Parse(startDate);
-                DateTime convertedEndDate = DateTime.Parse(endDate);
 
                 cmd.Parameters.AddWithValue("type", type);
                 cmd.Parameters.AddWithValue("startDate", convertedStartDate);
@@ -92,12 +104,17 @@ namespace hrm
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void NavigateToHome(object sender, EventArgs e)
         {
             Home page = new Home();
 
             page.Show();
             this.Hide();
+        }
+
+        private void LeaveRequest_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

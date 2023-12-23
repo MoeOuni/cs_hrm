@@ -102,7 +102,7 @@
             label2.Size = new Size(67, 20);
             label2.TabIndex = 5;
             label2.Text = "Prénom :";
-            label2.Click += label2_Click;
+
             // 
             // label3
             // 
@@ -113,7 +113,7 @@
             label3.Size = new Size(105, 20);
             label3.TabIndex = 6;
             label3.Text = "Mot de passe :";
-            label3.Click += label3_Click;
+
             // 
             // textBoxPassword
             // 
@@ -132,7 +132,6 @@
             label5.Size = new Size(78, 20);
             label5.TabIndex = 9;
             label5.Text = "Matricule :";
-            label5.Click += label5_Click;
             // 
             // button1
             // 
@@ -162,7 +161,7 @@
             textBoxMatricule.Name = "textBoxMatricule";
             textBoxMatricule.Size = new Size(186, 27);
             textBoxMatricule.TabIndex = 12;
-            textBoxMatricule.TextChanged += textBox4_TextChanged;
+
             // 
             // textBoxPoste
             // 

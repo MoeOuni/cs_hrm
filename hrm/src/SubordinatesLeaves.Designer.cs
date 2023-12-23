@@ -38,35 +38,43 @@
             // dataGridView
             // 
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Location = new Point(12, 112);
+            dataGridView.Location = new Point(15, 140);
+            dataGridView.Margin = new Padding(4);
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersWidth = 51;
-            dataGridView.Size = new Size(814, 368);
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.Size = new Size(1018, 460);
             dataGridView.TabIndex = 0;
+            dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
             // button1
             // 
-            button1.Location = new Point(715, 77);
+            button1.Location = new Point(894, 96);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(118, 36);
             button1.TabIndex = 1;
             button1.Text = "Rejeter";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(599, 77);
+            button2.Location = new Point(749, 96);
+            button2.Margin = new Padding(4);
             button2.Name = "button2";
-            button2.Size = new Size(94, 29);
+            button2.Size = new Size(118, 36);
             button2.TabIndex = 2;
             button2.Text = "Approuver";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(12, 27);
+            button3.Location = new Point(15, 34);
+            button3.Margin = new Padding(4);
             button3.Name = "button3";
-            button3.Size = new Size(94, 29);
+            button3.Size = new Size(118, 36);
             button3.TabIndex = 3;
             button3.Text = "Retour";
             button3.UseVisualStyleBackColor = true;
@@ -74,13 +82,14 @@
             // 
             // SubordinatesLeaves
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(838, 492);
+            ClientSize = new Size(1048, 615);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dataGridView);
+            Margin = new Padding(4);
             Name = "SubordinatesLeaves";
             Text = "SubordinatesLeaves";
             Load += SubordinatesLeaves_Load;
