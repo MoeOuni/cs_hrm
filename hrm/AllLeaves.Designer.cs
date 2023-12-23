@@ -29,47 +29,47 @@
         private void InitializeComponent()
         {
             button3 = new Button();
-            dataGridView = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            dataGridViewAllLeaves = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAllLeaves).BeginInit();
             SuspendLayout();
             // 
             // button3
             // 
-            button3.Location = new Point(12, 11);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(14, 15);
             button3.Name = "button3";
-            button3.Size = new Size(82, 22);
+            button3.Size = new Size(94, 29);
             button3.TabIndex = 4;
             button3.Text = "Retour";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // dataGridView
+            // dataGridViewAllLeaves
             // 
-            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Location = new Point(12, 47);
-            dataGridView.Margin = new Padding(3, 2, 3, 2);
-            dataGridView.Name = "dataGridView";
-            dataGridView.RowHeadersWidth = 51;
-            dataGridView.Size = new Size(712, 276);
-            dataGridView.TabIndex = 5;
+            dataGridViewAllLeaves.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewAllLeaves.Location = new Point(14, 63);
+            dataGridViewAllLeaves.Name = "dataGridViewAllLeaves";
+            dataGridViewAllLeaves.RowHeadersWidth = 51;
+            dataGridViewAllLeaves.Size = new Size(814, 368);
+            dataGridViewAllLeaves.TabIndex = 5;
             // 
             // AllLeaves
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView);
+            ClientSize = new Size(914, 600);
+            Controls.Add(dataGridViewAllLeaves);
             Controls.Add(button3);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AllLeaves";
             Text = "AllLeaves";
-            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            Load += AllLeaves_Load_1;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAllLeaves).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button button3;
-        private DataGridView dataGridView;
+        private DataGridView dataGridViewAllLeaves;
     }
 }
