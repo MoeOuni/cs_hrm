@@ -19,25 +19,6 @@ namespace hrm
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -74,7 +55,7 @@ namespace hrm
                 // All fields are filled, proceed with the logic
                 DB.con.Open();
 
-                string query = "INSERT INTO users (firstName, lastName, role, matricule, post, leaveBalance, email, password, phoneNumber, cin, adresse, idManager) VALUES ( '" + firstName + "', '" + name + "', '" + role + "', '" + matricule + "', '" + poste + "', '" + leaveBalance + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + cin + "', '" + address + "', '" + idResponsable +"')";
+                string query = "INSERT INTO users (firstName, lastName, role, matricule, post, leaveBalance, email, password, phoneNumber, cin, adresse, idManager) VALUES ( '" + firstName + "', '" + name + "', '" + role + "', '" + matricule + "', '" + poste + "', '" + leaveBalance + "', '" + email + "', '" + password + "', '" + phoneNumber + "', '" + cin + "', '" + address + "', '" + idResponsable + "')";
 
                 SqlCommand cmd = new SqlCommand(query, DB.con);
 

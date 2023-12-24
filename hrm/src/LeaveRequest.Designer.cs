@@ -45,35 +45,34 @@
             // 
             type.FormattingEnabled = true;
             type.Items.AddRange(new object[] { "Congé Annuel", "Congé Sans Solde", "Congé Maladie", "Autorisation", "Télétravail", "Autre Absence" });
-            type.Location = new Point(35, 108);
-            type.Margin = new Padding(3, 4, 3, 4);
+            type.Location = new Point(44, 150);
+            type.Margin = new Padding(4, 6, 4, 6);
             type.Name = "type";
-            type.Size = new Size(383, 26);
+            type.Size = new Size(478, 33);
             type.TabIndex = 0;
             // 
             // startDate
             // 
-            startDate.Location = new Point(35, 176);
-            startDate.Margin = new Padding(3, 4, 3, 4);
+            startDate.Location = new Point(44, 244);
+            startDate.Margin = new Padding(4, 6, 4, 6);
             startDate.Name = "startDate";
-            startDate.Size = new Size(383, 27);
+            startDate.Size = new Size(478, 31);
             startDate.TabIndex = 1;
             // 
             // endDate
             // 
-            endDate.Location = new Point(35, 250);
-            endDate.Margin = new Padding(3, 4, 3, 4);
+            endDate.Location = new Point(44, 347);
+            endDate.Margin = new Padding(4, 6, 4, 6);
             endDate.Name = "endDate";
-            endDate.Size = new Size(383, 27);
+            endDate.Size = new Size(478, 31);
             endDate.TabIndex = 2;
-            endDate.ValueChanged += dateTimePicker2_ValueChanged;
             // 
             // motif
             // 
-            motif.Location = new Point(35, 327);
-            motif.Margin = new Padding(3, 4, 3, 4);
+            motif.Location = new Point(44, 454);
+            motif.Margin = new Padding(4, 6, 4, 6);
             motif.Name = "motif";
-            motif.Size = new Size(383, 115);
+            motif.Size = new Size(478, 158);
             motif.TabIndex = 3;
             motif.Text = "";
             // 
@@ -83,12 +82,12 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(35, 80);
+            label1.Location = new Point(44, 111);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(180, 20);
+            label1.Size = new Size(219, 28);
             label1.TabIndex = 4;
             label1.Text = "Type de la demande : ";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -96,12 +95,12 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(35, 149);
+            label2.Location = new Point(44, 207);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(129, 20);
+            label2.Size = new Size(158, 28);
             label2.TabIndex = 5;
             label2.Text = "Date de début :";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -109,9 +108,10 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(35, 224);
+            label3.Location = new Point(44, 311);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(103, 20);
+            label3.Size = new Size(129, 28);
             label3.TabIndex = 6;
             label3.Text = "Date de fin :";
             // 
@@ -121,41 +121,43 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label4.ForeColor = SystemColors.ControlLightLight;
-            label4.Location = new Point(35, 300);
+            label4.Location = new Point(44, 417);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(50, 20);
+            label4.Size = new Size(65, 28);
             label4.TabIndex = 7;
             label4.Text = "Motif";
             // 
             // submit
             // 
             submit.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            submit.Location = new Point(35, 462);
-            submit.Margin = new Padding(3, 4, 3, 4);
+            submit.Location = new Point(44, 642);
+            submit.Margin = new Padding(4, 6, 4, 6);
             submit.Name = "submit";
-            submit.Size = new Size(114, 35);
+            submit.Size = new Size(142, 49);
             submit.TabIndex = 8;
             submit.Text = "Soumettre";
             submit.UseVisualStyleBackColor = true;
-            submit.Click += submit_Click;
+            submit.Click += SubmitLeaveRequest;
             // 
             // button1
             // 
-            button1.Location = new Point(35, 21);
+            button1.Location = new Point(44, 29);
+            button1.Margin = new Padding(4, 4, 4, 4);
             button1.Name = "button1";
-            button1.Size = new Size(103, 36);
+            button1.Size = new Size(129, 50);
             button1.TabIndex = 9;
             button1.Text = "Retour";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += NavigateToHome;
             // 
             // LeaveRequest
             // 
-            AutoScaleDimensions = new SizeF(8F, 18F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(466, 581);
+            ClientSize = new Size(582, 807);
             Controls.Add(button1);
             Controls.Add(submit);
             Controls.Add(label4);
@@ -167,9 +169,10 @@
             Controls.Add(startDate);
             Controls.Add(type);
             DoubleBuffered = true;
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 6, 4, 6);
             Name = "LeaveRequest";
             Text = "LeaveRequest";
+            Load += LeaveRequest_Load;
             ResumeLayout(false);
             PerformLayout();
         }
