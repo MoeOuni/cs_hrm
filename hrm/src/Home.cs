@@ -19,6 +19,16 @@ namespace hrm
 
         private void Home_Load(object sender, EventArgs e)
         {
+            if (Login.userRole == "Collaborateur")
+            {
+                button7.Hide();
+
+            }
+            if (Login.userRole != "Administrateur")
+            {
+                button5.Hide();
+                button6.Hide();
+            }
 
         }
 
@@ -77,6 +87,14 @@ namespace hrm
         private void button6_Click(object sender, EventArgs e)
         {
             AllLeaves page = new AllLeaves();
+            page.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Profil page = new Profil();
+
             page.Show();
             this.Hide();
         }

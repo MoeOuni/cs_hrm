@@ -22,15 +22,16 @@ namespace hrm
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Home page = new Home();
 
+            page.Show();
+            this.Hide();
         }
 
 
         private void AllLeaves_Load_1(object sender, EventArgs e)
         {
             DB.con.Open();
-
-            MessageBox.Show(Login.userId.ToString());
 
             String sqlQuery = "SELECT leaves.type, leaves.startDate, leaves.endDate, leaves.motif, leaves.requestedAt, leaves.status, users.firstName, users.lastName FROM leaves JOIN users ON leaves.requestedBy = users.id";
 
@@ -50,22 +51,22 @@ namespace hrm
                     firstName = reader.GetString(6),
                     lastName = reader.GetString(7),
                     type = reader.GetString(0),
-
-                requests.Add(request); // Add the request to the list
-            }
-
-            reader.Close();
                     startDate = reader.GetDateTime(1),
                     endDate = reader.GetDateTime(2),
                     motif = reader.GetString(3),
                     requestedAt = reader.GetDateTime(4),
                     status = reader.GetString(5),
                 };
+                requests.Add(request); // Add the request to the list
+            }
+
+            reader.Close();
+                 
 
             dataGridViewAllLeaves.DataSource = requests;
             DB.con.Close();
         }
-    }// 
+    } 
 }
 
 

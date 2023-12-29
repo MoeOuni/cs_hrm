@@ -151,7 +151,7 @@ namespace hrm
                             try
                             {
                                 // DateFuncs.CalculerJoursConges(selectedRow.startDate, selectedRow.endDate) retourne le nombre de jours ouvrables entre deux dates
-                                Utils.UpdateLeaveBalance(selectedRow.requestedBy, DateFuncs.CalculerJoursConges(selectedRow.startDate, selectedRow.startDate));
+                                Utils.UpdateLeaveBalance(selectedRow.requestedBy, DateFuncs.CalculerJoursConges(selectedRow.startDate, selectedRow.endDate));
                             }
                             catch (System.Exception ex)
                             {

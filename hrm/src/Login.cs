@@ -14,6 +14,7 @@ namespace hrm
     public partial class Login : Form
     {
         public static int userId = -1;
+        public static String userRole = "N/A";
         public Login()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace hrm
             {
                 DB.con.Open();
 
-                string sql_request = "SELECT * FROM users WHERE email=@email AND password=@password";
+                string sql_request = "SELECT ID, ROLE FROM users WHERE email=@email AND password=@password";
 
                 SqlCommand cmd = new SqlCommand(sql_request, DB.con);
 
@@ -45,12 +46,12 @@ namespace hrm
                 {
                     // Redirect to other page.
                     userId = dr.GetInt32(0);
+                    userRole = dr.GetString(1);
 
                     Home home = new Home();
 
 
                     home.Show();
-
                     this.Hide();
                 }
                 else
